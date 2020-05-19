@@ -1,0 +1,1 @@
+web: gunicorn taikoblog.wsgi --log-file -
