@@ -1,6 +1,6 @@
-<h1>Hello There</h1>
-
-{% for post in object_list %}
-    <h2>{{post.title}} by {{ post.author.first_name }} {{ post.author.last_name }}</h2>
-    <p>{{post.body}}</p>
+<h1>All Posts</h1>
+<strong>Record counts: {{post_list | length}}</strong>
+{% for post in post_list %}
+<h3><a href="{% url 'artical-detail' post.pk %}"> {{ post.title }} </a> </h3>
 {% endfor %}
+

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DateDetailView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 # def home(request):
@@ -8,3 +8,7 @@ from .models import Post
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+
+class ArticalDetailView(DetailView):
+    model = Post
+    template_name = 'artical_detail.html'
