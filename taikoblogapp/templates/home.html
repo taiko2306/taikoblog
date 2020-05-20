@@ -1,6 +1,18 @@
-<h1>All Posts</h1>
-<strong>Record counts: {{post_list | length}}</strong>
-{% for post in post_list %}
-<h3><a href="{% url 'artical-detail' post.pk %}"> {{ post.title }} </a> </h3>
-{% endfor %}
-
+{% extends 'base.html' %}
+{% block title %}
+    Posts
+{%endblock %}
+{% block content %}
+    <p>Welcome to My Blog,
+        {% if user.is_authenticated %}
+           <strong> {{ user.username | capfirst }} </strong>
+        {% else %}
+            Guest
+        {% endif %}
+    </p>
+    <strong>Record counts: {{post_list | length}}</strong>
+    {% for post in post_list %}
+        <h3><a href="{% url 'article-detail' post.pk %}"> {{ post.title }}
+        </a> -  <a href="{% url 'update-post' post.pk %}"><small>edit</small></a></h3>
+    {% endfor %}
+{%endblock %}
