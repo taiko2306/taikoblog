@@ -13,6 +13,7 @@
     <strong>Record counts: {{post_list | length}}</strong>
     {% for post in post_list %}
         <h3><a href="{% url 'article-detail' post.pk %}"> {{ post.title }}
-        </a> -  <a href="{% url 'update-post' post.pk %}"><small>edit</small></a></h3>
+        </a> -  <a href="{% url 'update-post' post.pk %}"><small>edit</small></a>
+        <a href="{% url 'delete-post' post.pk %}"><small>Delete</small></a></h3>
     {% endfor %}
 {%endblock %}

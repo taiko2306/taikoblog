@@ -4,12 +4,13 @@
 {%endblock %}
 {% block content %}
     <h1>{{post.title}} </h1>
-    <small>By: {{ post.author.first_name }} {{ post.author.last_name }} </small>
+    <small>By: {{ post.author.first_name }} {{ post.author.last_name }} on {{ post.post_date }}</small>
     <hr>
     <p>{{post.body}}</p>
     <br>
     <hr>
     <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'delete-post' post.pk %}" class="btn btn-primary">Delete</a>
     <small><a href="{% url 'home' %}" class="btn btn-secondary">Back</a></small>
 {%endblock %}
 
